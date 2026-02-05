@@ -5,29 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Week 2026 | Sukkur IBA University - IET Khairpur</title>
     
-    <!-- Fonts: Teko for Headings (Sporty), Poppins for Body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Icons: FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Tailwind CSS (for layout utility) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- QR Code Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-    <!-- Custom Styles -->
     <style>
         :root {
             --primary: #FF2E63;
             --secondary: #08D9D6;
             --accent: #EAEAEA;
             --dark: #252A34;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
@@ -39,29 +32,39 @@
             padding: 0;
         }
 
+        /* --- UPDATED LOGO STYLES --- */
+        .logo-interactive {
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); /* Glow effect */
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: floatLogo 4s ease-in-out infinite;
+        }
+
+        /* Mobile Tap Effect */
+        .logo-interactive:active {
+            transform: scale(0.90) rotate(-5deg);
+            filter: drop-shadow(0 0 15px rgba(8, 217, 214, 0.8));
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
         /* Animated Background */
         .bg-mesh {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: -1;
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
         }
         
-        /* Dark overlay pattern */
         .bg-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: -1;
-            background-image: 
-                radial-gradient(rgba(0,0,0,0) 1px, #0f172a 1px);
+            background-image: radial-gradient(rgba(0,0,0,0) 1px, #0f172a 1px);
             background-size: 30px 30px;
             opacity: 0.9;
             backdrop-filter: blur(20px);
@@ -109,7 +112,6 @@
             box-shadow: 0 20px 40px rgba(0, 242, 254, 0.15);
         }
 
-        /* Custom Scroll Animation Classes */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -122,10 +124,7 @@
         }
 
         /* QR Pulse Animation */
-        .qr-container {
-            position: relative;
-        }
-        
+        .qr-container { position: relative; }
         .qr-container::before {
             content: '';
             position: absolute;
@@ -144,22 +143,12 @@
             100% { transform: scale(0.95); opacity: 0.5; }
         }
 
-        /* Custom Icon Styling */
-        .game-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: -webkit-linear-gradient(#08D9D6, #252A34);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: #08D9D6;
-            filter: drop-shadow(0 0 5px rgba(8, 217, 214, 0.5));
-        }
-        
         .price-badge {
             background: linear-gradient(90deg, #FF2E63, #ff5787);
             box-shadow: 0 4px 15px rgba(255, 46, 99, 0.4);
         }
 
-        /* Floating Shapes for visual interest */
+        /* Floating Shapes */
         .shape {
             position: absolute;
             filter: blur(50px);
@@ -188,19 +177,16 @@
 </head>
 <body>
 
-    <!-- Background Elements -->
     <div class="bg-mesh"></div>
     <div class="bg-overlay"></div>
     <div class="shape shape-1 rounded-full"></div>
     <div class="shape shape-2 rounded-full"></div>
 
-    <!-- Header / Nav -->
     <nav class="w-full glass-card rounded-none border-t-0 border-x-0 sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
         <div class="flex items-center gap-4">
-            <!-- Logo -->
-            <div class="bg-white/90 px-3 py-1.5 rounded-lg shadow-lg hover:scale-105 transition-transform">
-                <img src="Logo-removebg-preview.png" alt="Sukkur IBA University Logo" class="h-10 w-auto object-contain">
-            </div>
+            <a href="#" class="logo-interactive block" style="/* filter: brightness(0) invert(1) drop-shadow(0 0 5px white); */">
+                <img src="Logo-removebg-preview.png" alt="Sukkur IBA University Logo" class="h-12 w-auto object-contain">
+            </a>
             
             <div class="leading-tight hidden sm:block">
                 <h2 class="text-lg md:text-xl font-bold tracking-wider m-0">Sukkur IBA University</h2>
@@ -212,7 +198,6 @@
         </a>
     </nav>
 
-    <!-- Hero Section -->
     <header class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-10 pb-20 overflow-hidden">
         <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-sm font-semibold mb-6 animate-pulse text-cyan-300">
             COMING SOON
@@ -238,7 +223,6 @@
         </div>
     </header>
 
-    <!-- Games Grid Section -->
     <section id="games" class="py-20 px-4 md:px-10 max-w-7xl mx-auto">
         <div class="text-center mb-16 reveal">
             <h2 class="text-5xl md:text-6xl font-bold mb-4 sport-font">The <span class="gradient-text-hot">Arena</span></h2>
@@ -246,11 +230,9 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="game-grid">
-            <!-- Game cards will be injected here by JS -->
-        </div>
+            </div>
     </section>
 
-    <!-- Registration & QR Section -->
     <section id="register" class="py-24 px-4 relative">
         <div class="max-w-4xl mx-auto glass-card p-8 md:p-16 rounded-3xl text-center reveal border border-cyan-500/30">
             
@@ -258,7 +240,6 @@
             <p class="text-xl text-gray-300 mb-10 max-w-lg mx-auto">Scan the QR code below to fill out the official registration form. Limited spots available!</p>
             
             <div class="flex flex-col items-center justify-center">
-                <!-- QR Code Container -->
                 <div class="qr-container bg-white p-4 rounded-2xl shadow-2xl mb-8">
                     <div id="qrcode"></div>
                 </div>
@@ -270,9 +251,7 @@
                 </a>
             </div>
 
-            <!-- WhatsApp & Community Section -->
             <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                <!-- Query Contact -->
                 <a href="https://wa.me/923444432197" class="group flex items-center justify-center md:justify-start gap-4 p-4 rounded-xl bg-green-500/10 border border-green-500/20 hover:bg-green-500/20 transition-all text-green-400 hover:text-green-300">
                     <i class="fa-brands fa-whatsapp text-3xl group-hover:scale-110 transition-transform"></i>
                     <div class="text-left">
@@ -281,7 +260,6 @@
                     </div>
                 </a>
                 
-                <!-- Community Link -->
                 <a href="https://chat.whatsapp.com/DT6zDuTE9elEopDX5B97lc" target="_blank" class="group flex items-center justify-center md:justify-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-white">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-users text-white text-sm"></i>
@@ -300,13 +278,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-slate-900/80 backdrop-blur text-center py-8 border-t border-white/5">
         <p class="text-gray-500 text-sm">&copy; 2026 Sukkur IBA University - IET Khairpur. All Rights Reserved.</p>
         <p class="text-gray-600 text-xs mt-2">Designed for Sports Week 2026</p>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         // Game Data Configuration
         const games = [
@@ -357,7 +333,6 @@
 
         // 2. Generate QR Code
         const qrContainer = document.getElementById("qrcode");
-        // Clear any loading states
         qrContainer.innerHTML = "";
         
         new QRCode(qrContainer, {
@@ -379,7 +354,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Only animate once
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
